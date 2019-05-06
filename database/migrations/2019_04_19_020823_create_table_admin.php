@@ -13,8 +13,12 @@ class CreateTableAdmin extends Migration
      */
     public function up()
     {
-        Schema::create('table_admin', function (Blueprint $table) {
+        Schema::create('admin', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('username',50);
+            $table->string('name',100);
+            $table->string('email',150);
+            $table->string('password');
             $table->timestamps();
         });
     }

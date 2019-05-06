@@ -13,8 +13,11 @@ class CreateTableImage extends Migration
      */
     public function up()
     {
-        Schema::create('table_image', function (Blueprint $table) {
+        Schema::create('image', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('link');
+            $table->tinyInteger('status');
+            $table->bigInteger("id_place");
             $table->timestamps();
         });
     }

@@ -13,8 +13,12 @@ class CreateTableComment extends Migration
      */
     public function up()
     {
-        Schema::create('table_comment', function (Blueprint $table) {
+        Schema::create('comment', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('id_user');
+            $table->string('review');
+            $table->text('content');
+            $table->bigInteger('id_place');
             $table->timestamps();
         });
     }

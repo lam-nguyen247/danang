@@ -13,8 +13,10 @@ class CreateTableCategory extends Migration
      */
     public function up()
     {
-        Schema::create('table_category', function (Blueprint $table) {
+        Schema::create('category', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string("name",50);
+            $table->bigInteger("parent_id");
             $table->timestamps();
         });
     }
